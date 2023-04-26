@@ -1,6 +1,7 @@
+
 import React from "react";
 
-function Task({category, text, onDelete}) {
+function Task({ category, text, onDelete }) {
   const handleClick = () => {
     onDelete(text);
   };

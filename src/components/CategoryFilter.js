@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 
-function CategoryFilter({ categories }) {
+function CategoryFilter({ categories, onCategorySelect }) {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const handleCategorySelect = (category) => {
+  const handleCategoryClick = (category) => {
     setSelectedCategory(category);
+    onCategorySelect(category);
   };
 
   return (
@@ -14,7 +15,7 @@ function CategoryFilter({ categories }) {
         <button
           key={category}
           className={selectedCategory === category ? "selected" : ""}
-          onClick={() => handleCategorySelect(category)}
+          onClick={() => handleCategoryClick(category)}
         >
           {category}
         </button>
